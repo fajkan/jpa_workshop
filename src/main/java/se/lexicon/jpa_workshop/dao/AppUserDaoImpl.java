@@ -56,7 +56,7 @@ public class AppUserDaoImpl implements AppUserDao{
     @Override
     public List<AppUser> findByEmail(String email) {
         Query query = entityManager.createQuery("select e from AppUser e where e.email = :em");
-        query.setParameter("em",AppuserEmail);
+        query.setParameter("em",email);
         List<AppUser> userEmail = query.getResultList();
         return Optional<AppUser> userEmail;
     }
